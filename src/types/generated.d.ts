@@ -35,7 +35,7 @@ export interface Accordion {
         /** Slug */
         slug: string;
         /** Description */
-        description: string;
+        description?: any;
     }[];
 }
 
