@@ -1,5 +1,5 @@
 import {jsonToHtml} from "@contentstack/json-rte-serializer";
-import {Box, Container, Image, SimpleGrid, Title} from "@mantine/core";
+import {Box, Container, Image, SimpleGrid, Text, Title} from "@mantine/core";
 import parse from "html-react-parser";
 import Head from "next/head";
 import {Stack} from "../../client/contentstack";
@@ -35,7 +35,7 @@ const KindergesundheitPage: InferGetStaticPropsType<typeof getStaticProps> = ({
             <Hero
                 imageUrl={modularService.featured_image.url}
                 title={HeroTitle(modularService.title)}
-                description={<></>}
+                description={HeroTeaser(modularService.teaser)}
             />
             <Container>
                 {modularService.modular_blocks?.map((service, index) => {
@@ -99,6 +99,15 @@ const HeroTitle = (title: string): JSX.Element => (
         color="blue.3">
         {title}
     </Title>
+);
+
+const HeroTeaser = (teaser: string): JSX.Element => (
+    <Text
+        pr={20}
+        className="responsive-text"
+        align="justify">
+        {teaser}
+    </Text>
 );
 
 const fetchKindergesundheitPage = async (): Promise<ModularService> => {
