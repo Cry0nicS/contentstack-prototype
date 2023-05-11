@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "verbatimModuleSyntax": true,
+        "incremental": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "noEmit": true,
+        "noImplicitAny": false, //tmp
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": false, // To be analyzed. Probably not OK with NextJs
+        "noUnusedLocals": false, //tmp
+        "noUnusedParameters": false, //tmp
+        "outDir": "dist",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ES2019",
+        "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo"
+    },
+    "include": ["next-env.d.ts", "src/**/*"], // *** The files TypeScript should type check ***
+    "exclude": ["node_modules", "public"] // *** The files to not type check ***
+}

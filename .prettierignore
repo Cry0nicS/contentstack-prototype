@@ -1,0 +1,4 @@
+# Generated files.
+/package-lock.json
+/.next
+package.json

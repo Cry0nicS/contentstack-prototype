@@ -1,0 +1,67 @@
+{
+    "name": "prototype-contentstack",
+    "description": "Prototype for Contentstack",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "clean": "rm -rf node_modules/",
+        "dev": "next dev",
+        "format": "prettier --write \"**/*.{js,json,jsx,scss,ts,tsx}\"",
+        "format-check": "prettier --check \"**/*.{html,js,json,jsx,scss,ts,tsx}\"",
+        "lint": "next lint",
+        "spell-check": "cspell --no-progress",
+        "start": "next start",
+        "style-check": "stylelint \"src/**/*.scss\"",
+        "style-fix": "stylelint --fix \"src/**/*.scss\"",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@contentstack/json-rte-serializer": "^2.0.2",
+        "@mantine/core": "^6.0.9",
+        "@mantine/hooks": "^6.0.9",
+        "@mantine/next": "^6.0.9",
+        "@next/font": "13.3.1",
+        "contentstack": "^3.17.1",
+        "env-var": "^7.3.1",
+        "eslint": "8.39.0",
+        "eslint-config-next": "13.3.1",
+        "next": "13.3.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "5.0.4"
+    },
+    "devDependencies": {
+        "@bkkvbu/commitlint-config": "^1.0.1",
+        "@bkkvbu/eslint-config": "^1.1.0",
+        "@bkkvbu/prettier-config": "^1.0.0",
+        "@bkkvbu/stylelint-config": "^1.0.0",
+        "@cspell/dict-de-de": "^3.1.0",
+        "@types/node": "18.16.1",
+        "@types/react": "18.2.0",
+        "@types/react-dom": "18.2.1",
+        "@typescript-eslint/eslint-plugin": "^5.57.1",
+        "@typescript-eslint/parser": "^5.39.0",
+        "cspell": "^6.31.1",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "lint-staged": "^13.2.2",
+        "prettier": "2.8.8",
+        "sass": "^1.62.1",
+        "simple-git-hooks": "^2.8.1",
+        "stylelint": "^14.13.0",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-scss": "^4.3.0"
+    },
+    "lint-staged": {
+        "*.{html,js,json,jsx,md,scss,ts,tsx}": "cspell --no-must-find-files",
+        "*.{html,js,json,jsx,scss,ts,tsx}": "prettier --check",
+        "*.{js,jsx,ts,tsx}": "eslint",
+        "*.{scss}": "stylelint"
+    },
+    "simple-git-hooks": {
+        "commit-msg": "npx commitlint --edit \"$1\"",
+        "pre-commit": "npx lint-staged"
+    },
+    "prettier": "@bkkvbu/prettier-config"
+}
