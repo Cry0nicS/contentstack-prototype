@@ -56,62 +56,83 @@ const AppPage: InferGetStaticPropsType<typeof getStaticProps> = ({
                         // Render an accordion.
                         if (service.accordion) {
                             return (
-                                <AccordionBlock
-                                    key={`Accordion-${index.toString()}`}
-                                    element={service.accordion.element}
-                                />
+                                <Grid.Col
+                                    p={0}
+                                    m={0}
+                                    key={`Paragraph-${index.toString()}`}>
+                                    <AccordionBlock
+                                        key={`Accordion-${index.toString()}`}
+                                        element={service.accordion.element}
+                                    />
+                                </Grid.Col>
                             );
                         }
 
                         // Render a paragraph.
                         if (service.paragraph) {
                             return (
-                                <Box key={`Paragraph-${index.toString()}`}>
+                                <Grid.Col
+                                    p={0}
+                                    m={0}
+                                    key={`Paragraph-${index.toString()}`}>
                                     {parse(jsonToHtml(service.paragraph.paragraph))}
-                                </Box>
+                                </Grid.Col>
                             );
                         }
 
                         // Render a sub0title.
                         if (service.sub_title) {
                             return (
-                                <Title
-                                    key={`Paragraph-${index.toString()}`}
-                                    py={20}
-                                    className="responsive-heading"
-                                    order={3}>
-                                    {service.sub_title.sub_title}
-                                </Title>
+                                <Grid.Col
+                                    p={0}
+                                    m={0}
+                                    key={`Paragraph-${index.toString()}`}>
+                                    <Title
+                                        py={20}
+                                        className="responsive-heading"
+                                        order={3}>
+                                        {service.sub_title.sub_title}
+                                    </Title>
+                                </Grid.Col>
                             );
                         }
 
                         // Render an image.
                         if (service.image) {
                             return (
-                                <Box key={`Paragraph-${index.toString()}`}>
+                                <Grid.Col
+                                    p={0}
+                                    m={0}
+                                    key={`Paragraph-${index.toString()}`}>
                                     <Image
                                         alt="Image"
                                         src={service.image.file?.url}
                                     />
-                                </Box>
+                                </Grid.Col>
                             );
                         }
 
                         // Render a form from Formcycle.
                         if (service.formcycle.form_id !== undefined) {
                             return (
-                                <Box key={`Paragraph-${index.toString()}`}>
+                                <Grid.Col
+                                    p={0}
+                                    m={0}
+                                    key={`Paragraph-${index.toString()}`}>
                                     <FormFrame id={service.formcycle.form_id} />
-                                </Box>
+                                </Grid.Col>
                             );
                         }
 
                         return (
-                            <Box
-                                key={`Empty-${index.toString()}`}
-                                pb={20}>
-                                Missing render template for &quot;{Object.keys(service)}&quot;.
-                            </Box>
+                            <Grid.Col
+                                p={0}
+                                m={0}
+                                key={`Paragraph-${index.toString()}`}>
+                                <Box pb={20}>
+                                    Missing render template for &quot;{Object.keys(service)}&quot;.
+                                </Box>
+                            </Grid.Col>
                         );
                     })}
                 </Grid>
